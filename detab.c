@@ -63,6 +63,3 @@ void detab(char line[], char output[])
         }
     }
 }
-
-
-

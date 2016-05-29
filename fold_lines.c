@@ -10,6 +10,8 @@
  * the specified column. */
 
 /* 16-05-28 - Does not handle 'ragged' output well. */
+/* 16-05-29 - new version - better ragged output handling, 
+ * still some issues */
 
 int getline(char line[], const int limit);
 void fold(const char line[], char output[], const int max_fold);

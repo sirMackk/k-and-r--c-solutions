@@ -22,7 +22,7 @@ int main()
     printf("signed int min: %d\n", INT_MIN);
     printf("signed int max: %d\n", INT_MAX);
     printf("unsigned int min: %d\n", 0);
-    printf("ungisned int max: %d\n", UINT_MAX);
+    printf("unsigned int max: %d\n", UINT_MAX);
 
     printf("signed long min: %ld\n", LONG_MIN);
     printf("signed long max: %ld\n", LONG_MAX);

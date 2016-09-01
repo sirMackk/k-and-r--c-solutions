@@ -1,4 +1,7 @@
+#ifndef STDIO
+#define STDIO
 #include <stdio.h>
+#endif
 #define BUFSIZE 100
 
 static char buf[BUFSIZE];

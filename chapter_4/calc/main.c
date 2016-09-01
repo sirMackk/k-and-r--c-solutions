@@ -1,4 +1,8 @@
+#ifndef STDIO
+#define STDIO
 #include <stdio.h>
+#endif
+
 #include <stdlib.h>
 #include <math.h>
 #include "calc.h"

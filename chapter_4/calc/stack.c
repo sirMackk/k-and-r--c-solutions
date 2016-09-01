@@ -1,5 +1,13 @@
+#ifndef STDIO
+#define STDIO
 #include <stdio.h>
+#endif
+
+#ifndef CALCH
+#define CALCH
 #include "calc.h"
+#endif
+
 #define MAXVAL 100
 
 int sp = 0;

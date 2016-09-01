@@ -1,6 +1,15 @@
+#ifndef STDIO
+#define STDIO
 #include <stdio.h>
+#endif
+
 #include <ctype.h>
+
+#ifndef CALCH
+#define CALCH
 #include "calc.h"
+#endif
+
 
 int getop(char s[])
 {

@@ -3,6 +3,8 @@
  * separate argument. For example: expr 2 3 4 + * evaluates to
  * 2 * (3 + 4) */
 
+/* Compile with: gcc -ansi -Wall -o 5_10_expr chapter_5/5_10_expr.c chapter_4/calc/getch.c chapter_4/calc/getop.c chapter_4/calc/stack.c  -lm */
+
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>

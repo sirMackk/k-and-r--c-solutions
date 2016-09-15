@@ -33,6 +33,7 @@ struct key keytab[] = {
 
 int getword(char *, int);
 int binsearch(char *, struct key *, int);
+struct key *binsearch_p(char *, struct key *, int);
 int getch(void);
 void ungetch(int);
 
@@ -40,12 +41,19 @@ int main(int argc, char *argv[])
 {
     int n;
     char word[MAXWORD];
+    struct key *p;
 
-    while (getword(word, MAXWORD) != EOF) {
+    /*while (getword(word, MAXWORD) != EOF) {*/
+        /*if (isalpha(word[0]))*/
+            /*if ((n = binsearch(word, keytab, NKEYS)) >= 0)*/
+                /*keytab[n].count++;*/
+    /*}*/
+
+    /* This combines structs and pointers */
+    while (getword(word, MAXWORD) != EOF)
         if (isalpha(word[0]))
-            if ((n = binsearch(word, keytab, NKEYS)) >= 0)
-                keytab[n].count++;
-    }
+            if ((p = binsearch_p(word, keytab, NKEYS)) != NULL)
+                p->count++;
 
     for (n = 0; n < NKEYS; n++)
         if (keytab[n].count > 0)
@@ -73,6 +81,26 @@ int binsearch(char *word, struct key tab[], int n)
     }
 
     return -1;
+}
+
+struct key *binsearch_p(char *word, struct key *tab, int n)
+{
+    int cond;
+    struct key *low = &tab[0];
+    struct key *high = &tab[n];
+    struct key *mid;
+
+    while (low < high) {
+        mid = low + (high - low) / 2;
+        if ((cond = strcmp(word, mid->word)) < 0)
+            high = mid;
+        else if (cond > 0)
+            low = mid + 1;
+        else
+            return mid;
+    }
+
+    return NULL;
 }
 
 int skip = 0;

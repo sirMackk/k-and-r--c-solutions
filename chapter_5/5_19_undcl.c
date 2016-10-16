@@ -1,4 +1,4 @@
-/* 5-1l: Modify undcl so that it does not add redundent parentheses to declarations. */
+/* 5-19: Modify undcl so that it does not add redundent parentheses to declarations. */
 
 #include <stdio.h>
 #include <string.h>

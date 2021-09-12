@@ -9,6 +9,7 @@ void copy(char to[], char from[]);
 main()
 {
     int len;
+    int curmax;
     int max;
     int c;
     char line[MAXLINE];
@@ -23,9 +24,25 @@ main()
         /* 1-16: Revise the main routine of the longest line program
          * so it will correctly print the length of arbitrarily long
          * input lines, and as much as possible of the text. */
-        if (len >= MAXLINE - 1) {
-            while ((c = getchar()) != EOF) {
-                ++max;
+        if (len == MAXLINE - 1)
+        {
+            curmax = len;
+            c = getchar();
+
+            while (c != EOF && c != '\n')
+            {
+                    ++curmax;
+                    c = getchar();
+            }
+
+            if (c == '\n')
+            {
+                    ++curmax;
+            }
+
+            if (curmax > max)
+            {
+                    max = curmax;
             }
         }
     }
